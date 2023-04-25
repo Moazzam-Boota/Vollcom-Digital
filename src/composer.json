@@ -1,0 +1,234 @@
+{
+  "name": "vollcom/wordpress-boilerplate",
+  "type": "project",
+  "license": "MIT",
+  "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+  "homepage": "https://www.vollcom-digital.de",
+  "authors": [
+    {
+      "name": "Vollcom Digital",
+      "email": "noops@vollcom-digital.de"
+    }
+  ],
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org",
+      "only": ["wpackagist-plugin/*", "wpackagist-theme/*"]
+    },
+    {
+      "type":"composer",
+      "url":"https://composer.deliciousbrains.com/502FEB2DB081E2E44CDF1FFA32E1222B"
+    },
+    {
+      "type": "composer",
+      "url": "https://wp-languages.github.io"
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "advanced-custom-fields/advanced-custom-fields-pro",
+        "version": "5.9.1",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://connect.advancedcustomfields.com/index.php?a=download&p=pro&k=b3JkZXJfaWQ9OTU4MzR8dHlwZT1kZXZlbG9wZXJ8ZGF0ZT0yMDE2LTEyLTE3IDIyOjI0OjQ2"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/sitepress-multilingual-cms",
+        "version": "4.4.10",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=6088&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=4.4.10"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/wpml-string-translation",
+        "version": "3.1.8",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=6092&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=3.1.8"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/wpml-translation-management",
+        "version": "2.10.6",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=6094&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=2.10.6"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/wpml-media-translation",
+        "version": "2.6.4",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=7474&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=2.6.4"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/wp-seo-multilingual",
+        "version": "1.3.0",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=3566177&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=1.3.0"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/contact-form-7-multilingual",
+        "version": "1.0.2",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=3156699&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=1.0.2"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/acfml",
+        "version": "1.0.2",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=1097589&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=1.8.1"
+        }
+      }
+    },
+    {
+      "type": "package",
+      "package": {
+        "name": "wpml/types",
+        "version": "3.4.7",
+        "type": "wordpress-plugin",
+        "dist": {
+          "type": "zip",
+          "url": "https://wpml.org/?download=1385906&user_id=177357&subscription_key=20225b42491915b7bac9d893bf820aeb&t=1615985268&version=3.4.7"
+        }
+      }
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "composer/installers": "^1.9",
+    "vlucas/phpdotenv": "^4.1.8",
+    "oscarotero/env": "^2.1",
+    "roots/bedrock-autoloader": "^1.0",
+    "roots/wordpress": "^5.6",
+    "roots/wp-config": "^1.0",
+    "roots/wp-password-bcrypt": "^1.0",
+    "wpackagist-plugin/wordpress-seo": "^15.5",
+    "wpackagist-plugin/broken-link-checker": "^1.11",
+    "wpackagist-plugin/antispam-bee": "^2.9",
+    "wpackagist-plugin/ewww-image-optimizer":"^5.8",
+    "wpackagist-plugin/regenerate-thumbnails": "^3.1",
+    "wpackagist-plugin/lazy-load-for-comments": "^1.0",
+    "wpackagist-plugin/duplicate-post": "^3.2",
+    "wpackagist-plugin/enable-media-replace": "^3.4",
+    "wpackagist-plugin/shariff": "^4.6",
+    "wpackagist-plugin/statify": "^1.8",
+    "wpackagist-plugin/accelerated-mobile-pages": "^1.0",
+    "advanced-custom-fields/advanced-custom-fields-pro": "^5.9",
+    "deliciousbrains-plugin/wp-migrate-db-pro": "^1.9",
+    "deliciousbrains-plugin/wp-migrate-db-pro-media-files": "^1.4",
+    "deliciousbrains-plugin/wp-migrate-db-pro-cli": "^1.3",
+    "wpackagist-plugin/smart-slider-3": "^3.4",
+    "wpackagist-plugin/redirection":"^4.9",
+    "wpackagist-plugin/easy-wp-smtp":"^1.4",
+    "koodimonni-language/core-de_de": "^5.5",
+    "wpackagist-plugin/reading-time-wp" : "^2.0",
+    "wpackagist-plugin/tinymce-advanced": "^5.6",
+    "wpackagist-plugin/wordpress-importer": "^0.7",
+    "wpackagist-plugin/elasticpress": "^3.5",
+    "wpackagist-plugin/wp-sentry-integration": "^3.11",
+    "wpackagist-plugin/safe-svg": "^1.9",
+    "wpackagist-plugin/webp-express": "^0.19",
+    "wpackagist-plugin/batcache": "^1.5",
+    "wpackagist-plugin/redis-cache": "^2.0",
+    "wpackagist-plugin/wp-bootstrap-blocks": "^3.1",
+    "wpackagist-plugin/olympus-google-fonts": "^2.3",
+    "wpackagist-plugin/spotlight-social-photo-feeds":"^0.5",
+    "wpackagist-plugin/bing-webmaster-tools": "^1.0",
+    "wpackagist-plugin/schema-and-structured-data-for-wp": "^1.9",
+    "wpackagist-plugin/pwa-for-wp": "^1.7",
+    "wpackagist-plugin/material-design-for-contact-form-7": "^2.6",
+    "wpackagist-plugin/contact-form-7": "^5.3",
+    "wpackagist-plugin/cf7-hubspot": "^1.1",
+    "wpackagist-plugin/cf7-to-zapier": "^2.2",
+    "wpackagist-plugin/cf7-conditional-fields": "^1.9",
+    "wpackagist-plugin/wp-gdpr-compliance": "^1.5",
+    "wpackagist-plugin/luckywp-table-of-contents": "^2.1",
+    "wp-media/wp-rocket": "^3.8",
+    "wpackagist-plugin/duracelltomi-google-tag-manager": "^1.11",
+    "wpackagist-plugin/ahrefs-seo": "^0.7.",
+    "wpackagist-plugin/wpcf7-redirect":"2.3.3",
+    "wpml/sitepress-multilingual-cms": "4.4.10",
+    "wpml/wpml-string-translation": "3.1.8",
+    "wpml/wpml-translation-management": "2.10.6",
+    "wpml/wpml-media-translation": "2.6.4",
+    "wpml/wp-seo-multilingual": "1.3.0",
+    "wpml/contact-form-7-multilingual": "1.0.2",
+    "wpml/acfml": "1.0.2",
+    "wpml/types": "3.4.7"
+  },
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.5.8",
+    "roave/security-advisories": "dev-master",
+    "wpackagist-plugin/reset-roles-and-capabilities": "^1.4",
+    "wpackagist-plugin/query-monitor": "^3.6",
+    "wpackagist-plugin/debug-bar": "^1.1",
+    "wpackagist-plugin/wp-crontrol": "^1.9",
+    "wp-cli/wp-cli": "^2.4",
+    "wp-coding-standards/wpcs": "^2.3"
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "preferred-install": "dist",
+    "github-oauth": {
+      "github.com": "6f38370619f8678722022acbc8e043a149169d4e"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/": ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/": ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/": ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir": "web/wp"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "php -r \"copy('.env.example', '.env');\""
+    ],
+    "test": [
+      "phpcs"
+    ]
+  }
+}

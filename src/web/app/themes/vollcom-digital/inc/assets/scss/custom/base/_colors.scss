@@ -1,0 +1,57 @@
+/* Background colors */
+// Gutenberg color options
+// -- see editor-color-palette in functions.php
+$colors: (
+  'hellblau': $teal,
+  'dunkelblau': $dark-blue,
+  'petrol': $petrol,
+  'hellgrau': $light-grey,
+  'gruen': $green,
+  'weiss': $white,
+  'hellgraulight': $ultra-light-grey,
+  'braun': $brown,
+);
+
+@each $name, $color in $colors {
+
+  .has-#{$name}-color {
+    color: $color;
+  }
+
+  .has-#{$name}-background-color {
+    background-color: $color;
+  }
+}
+
+/* Gradients */
+.has-dunkelblau-background-gradient-color {
+  background: linear-gradient(180deg,rgba(24,19,71,.3),rgba(24,19,71,0.6) 100%,$brown) !important;
+}
+
+.has-braun-background-gradient-color {
+  background: linear-gradient(180deg,rgba(46,46,54,.3),rgba(46,46,54,0.6) 100%,$brown) !important;
+}
+
+.linear-gradient-blue {
+  background-repeat: no-repeat;
+  background-image: url($imageDecoLeftPathDark); /* fallback */
+  background-image: url($imageDecoLeftPathDark), linear-gradient(to bottom, $dark-blue, $dark-blue-ending); /* W3C */
+  background-size: 25%, cover;
+  background-position-y: bottom;
+}
+
+.has-hellgrau-background-color-with-deco {
+  background-repeat: no-repeat;
+  background-image: url($imageDecoLeftPathLight); /* fallback */
+  background-image: url($imageDecoLeftPathLight), linear-gradient(to bottom, $light-grey, $light-grey); /* W3C */
+  background-size: 25%, cover;
+}
+
+@media (min-width: 768px){
+  .linear-gradient-blue {
+    background-size: 8%, cover;
+  }
+  .has-hellgrau-background-color-with-deco {
+    background-size: 8%, cover;
+  }
+}

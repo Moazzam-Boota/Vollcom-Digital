@@ -1,0 +1,38 @@
+pipelines:
+  branches:
+    development: # only to development branch
+      - step:
+          name: Get deploy sync list and deploy to dev.vollcom-digital.com automatically
+          image: atlassian/default-image:latest
+          deployment: development
+          script:            
+            - rsync -rp --verbose --rsync-path='sudo rsync' $BITBUCKET_CLONE_DIR/ ${SSH_USER}@${SSH_SERVER}:${DEV_ROOT_PATH}
+      - step:
+          name: Run composer & set permissions
+          image: node:4.6.0
+          script:
+            - ssh $SSH_USER@$SSH_SERVER `cd ${DEV_ROOT_PATH};sudo bash ./deploy.sh`
+    staging: # only to staging branch
+      - step:
+          name: Get deploy sync list and deploy to qa.vollcom-digital.com automatically
+          image: atlassian/default-image:latest
+          deployment: stage
+          script:            
+            - rsync -rp --verbose --rsync-path='sudo rsync' $BITBUCKET_CLONE_DIR/ ${SSH_USER}@${SSH_SERVER}:${QA_ROOT_PATH}
+      - step:
+          name: Run composer & set permissions
+          image: node:4.6.0
+          script:
+            - ssh $SSH_USER@$SSH_SERVER `cd ${QA_ROOT_PATH};sudo bash ./deploy.sh`
+    master:
+      - step:
+          name: Get deploy sync list and deploy to qa.vollcom-digital.com automatically
+          image: atlassian/default-image:latest
+          deployment: prod
+          script:            
+            - rsync -rp --verbose --rsync-path='sudo rsync' $BITBUCKET_CLONE_DIR/ ${SSH_USER}@${SSH_SERVER}:${PROD_ROOT_PATH}
+      - step:
+          name: Run composer & set permissions
+          image: node:4.6.0
+          script:
+            - ssh $SSH_USER@$SSH_SERVER `cd ${PROD_ROOT_PATH};sudo bash ./deploy.sh`

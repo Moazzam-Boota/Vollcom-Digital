@@ -1,0 +1,18 @@
+.carousel-multi-item .carousel-indicators {
+  margin-bottom: 0;
+}
+
+.carousel-indicators li {
+  margin-top: 0
+}
+
+.carousel-multi-item .carousel-indicators li {
+  background-color: #E2E2E2;
+}
+
+.carousel-multi-item .carousel-indicators .active {
+  background-color: #394251;
+  width: 1.25rem;
+  max-width: 1.25rem;
+  height: 1.25rem;
+}

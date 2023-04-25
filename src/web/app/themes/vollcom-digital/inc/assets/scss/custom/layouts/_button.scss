@@ -1,0 +1,42 @@
+.btn-outline-petrol {
+  color: $petrol !important;
+  background-color: transparent !important;
+  border: 2px solid $petrol !important;
+}
+
+#cf7md-form {
+  .mdc-button {
+    margin: $btn-margin-basic;
+    color: inherit;
+    background-color: $teal !important;
+    text-transform: uppercase;
+    word-wrap: break-word;
+    white-space: normal;
+    cursor: pointer;
+    border: 0;
+    border-radius: $border-radius-base;
+    box-shadow: $z-depth-1;
+    transition: $btn-transition;
+    @include button-size($btn-padding-y-basic, $btn-padding-x-basic, $btn-font-size-basic);
+
+    @include hover-focus-active {
+      outline: 0;
+      box-shadow: $z-depth-1-half;
+    }
+  }
+}
+
+.btn-vd-teal {
+  color: white;
+  background-color: $teal !important;
+}
+.btn-vd-teal:hover {
+  color: white;
+  outline: 0;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+.btn-middle-float {
+  position: absolute;
+  bottom: -29.44px;
+  transform: translate(50%);
+}

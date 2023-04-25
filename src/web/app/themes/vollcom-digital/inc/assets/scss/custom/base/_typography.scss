@@ -1,0 +1,46 @@
+/* Text color */
+.teal-text {
+  color: $teal !important;
+}
+
+.dark-blue-text {
+  color: $dark-blue !important;
+}
+
+/* Text sizes */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: $dark-blue;
+}
+
+p, blockquote, ul li{
+  font-size: 1.125rem;
+}
+
+strong {
+  font-weight: 700 !important;
+}
+
+.card-text {
+  font-size: 1rem !important;
+}
+
+/* Links */
+a {
+  color: $teal;
+}
+
+a:hover {
+  color: $dark-blue;
+}
+
+.job-title {
+  font-size: 2rem;
+}
+
+@media (min-width: 768px){
+  .job-title {
+    font-size: 2.5rem;
+  }
+}
+

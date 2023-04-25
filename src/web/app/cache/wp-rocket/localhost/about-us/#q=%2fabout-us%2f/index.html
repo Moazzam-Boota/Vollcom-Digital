@@ -1,0 +1,1504 @@
+<style>
+    @media only screen and (max-width: 600px) {
+        #textfield {
+            width: 348px !important;
+        }
+    }
+</style>
+
+<!DOCTYPE html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en-US">
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let r;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",r=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(r){e["rocket"+t]=n=r}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript,r=document.createRange(),i=n.parentElement;let o=e.get(n);void 0===o&&(o=n.nextSibling,e.set(n,o));const a=document.createDocumentFragment();r.setStart(a,0),a.appendChild(r.createContextualFragment(t)),i.insertBefore(a,o)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="profile" href="http://gmpg.org/xfn/11">
+    <meta name='robots' content='noindex, follow, nofollow' />
+<link rel="alternate" hreflang="de" href="http://localhost:8080/de/ueber-uns/" />
+<link rel="alternate" hreflang="en" href="http://localhost:8080/about-us/" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+	var gtm4wp_datalayer_name = "dataLayer";
+	var dataLayer = dataLayer || [];
+//]]>
+</script>
+<!-- End Google Tag Manager for WordPress by gtm4wp.com -->
+	<!-- This site is optimized with the Yoast SEO plugin v15.9.2 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>About us - Vollcom Digital</title><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500%7CMaven%20Pro%3A400%2C500%2C600%2C700%2C800%2C900%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;display=swap" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500%7CMaven%20Pro%3A400%2C500%2C600%2C700%2C800%2C900%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;display=swap" media="print" onload="this.media='all'" /><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto%3A400%2C500%7CMaven%20Pro%3A400%2C500%2C600%2C700%2C800%2C900%2C400i%2C500i%2C600i%2C700i%2C800i%2C900i&#038;display=swap" /></noscript>
+	<meta name="description" content="At Vollcom Digital, we help companies drive their businesses forward. We strive to build the most innovative digital products." />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="About us - Vollcom Digital" />
+	<meta property="og:description" content="At Vollcom Digital, we help companies drive their businesses forward. We strive to build the most innovative digital products." />
+	<meta property="og:url" content="http://localhost:8080/about-us/" />
+	<meta property="og:site_name" content="Vollcom Digital" />
+	<meta property="article:publisher" content="https://www.facebook.com/vollcomdigital/" />
+	<meta property="article:modified_time" content="2021-09-29T15:14:49+00:00" />
+	<meta property="og:image" content="https://vollcom-digital.com/app/uploads/2020/10/our-story.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@Vollcom_Digital" />
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="2 minutes">
+	<script type="application/ld+json" class="yoast-schema-graph">{
+	    "@context": "https://schema.org",
+	    "@graph": [
+	        {
+	            "@type": "Organization",
+	            "@id": "https://localhost:8080/#organization",
+	            "name": "Vollcom Digital GmbH",
+	            "url": "https://localhost:8080/",
+	            "sameAs": [
+	                "https://www.facebook.com/vollcomdigital/",
+	                "https://www.instagram.com/vollcom_digital/",
+	                "https://www.linkedin.com/company/vollcom-digital-gmbh",
+	                "https://twitter.com/Vollcom_Digital"
+	            ],
+	            "logo": {
+	                "@type": "ImageObject",
+	                "@id": "https://localhost:8080/#logo",
+	                "inLanguage": "en-US",
+	                "url": "",
+	                "caption": "Vollcom Digital GmbH"
+	            },
+	            "image": {
+	                "@id": "https://localhost:8080/#logo"
+	            }
+	        },
+	        {
+	            "@type": "WebSite",
+	            "@id": "https://localhost:8080/#website",
+	            "url": "https://localhost:8080/",
+	            "name": "Vollcom Digital",
+	            "description": "",
+	            "publisher": {
+	                "@id": "https://localhost:8080/#organization"
+	            },
+	            "potentialAction": [
+	                {
+	                    "@type": "SearchAction",
+	                    "target": "https://localhost:8080/?s={search_term_string}",
+	                    "query-input": "required name=search_term_string"
+	                }
+	            ],
+	            "inLanguage": "en-US"
+	        },
+	        {
+	            "@type": "ImageObject",
+	            "@id": "http://localhost:8080/about-us/#primaryimage",
+	            "inLanguage": "en-US",
+	            "url": "https://vollcom-digital.com/app/uploads/2020/10/our-story.jpg"
+	        },
+	        {
+	            "@type": "WebPage",
+	            "@id": "http://localhost:8080/about-us/#webpage",
+	            "url": "http://localhost:8080/about-us/",
+	            "name": "About us - Vollcom Digital",
+	            "isPartOf": {
+	                "@id": "https://localhost:8080/#website"
+	            },
+	            "primaryImageOfPage": {
+	                "@id": "http://localhost:8080/about-us/#primaryimage"
+	            },
+	            "datePublished": "2020-10-06T17:54:45+00:00",
+	            "dateModified": "2021-09-29T15:14:49+00:00",
+	            "description": "At Vollcom Digital, we help companies drive their businesses forward. We strive to build the most innovative digital products.",
+	            "breadcrumb": {
+	                "@id": "http://localhost:8080/about-us/#breadcrumb"
+	            },
+	            "inLanguage": "en-US",
+	            "potentialAction": [
+	                {
+	                    "@type": "ReadAction",
+	                    "target": [
+	                        "http://localhost:8080/about-us/"
+	                    ]
+	                }
+	            ]
+	        },
+	        {
+	            "@type": "BreadcrumbList",
+	            "@id": "http://localhost:8080/about-us/#breadcrumb",
+	            "itemListElement": [
+	                {
+	                    "@type": "ListItem",
+	                    "position": 1,
+	                    "item": {
+	                        "@type": "WebPage",
+	                        "@id": "https://localhost:8080/",
+	                        "url": "https://localhost:8080/",
+	                        "name": "Startseite"
+	                    }
+	                },
+	                {
+	                    "@type": "ListItem",
+	                    "position": 2,
+	                    "item": {
+	                        "@type": "WebPage",
+	                        "@id": "http://localhost:8080/about-us/",
+	                        "url": "http://localhost:8080/about-us/",
+	                        "name": "About us"
+	                    }
+	                }
+	            ]
+	        }
+	    ]
+	}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//localhost' />
+<link rel='dns-prefetch' href='//player.vimeo.com' />
+<link rel='dns-prefetch' href='//www.google.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="Vollcom Digital &raquo; Feed" href="http://localhost:8080/feed/" />
+<link rel="alternate" type="application/rss+xml" title="Vollcom Digital &raquo; Comments Feed" href="http://localhost:8080/comments/feed/" />
+<link rel='stylesheet' id='wp-block-library-css'  href='/wp/wp-includes/css/dist/block-library/style.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-bootstrap-blocks-styles-css'  href='http://localhost:8080/app/plugins/wp-bootstrap-blocks/build/style-index.css?ver=3.3.2' type='text/css' media='all' />
+<link rel='stylesheet' id='contact-form-7-css'  href='http://localhost:8080/app/plugins/contact-form-7/includes/css/styles.css?ver=5.4.2' type='text/css' media='all' />
+
+<link rel='stylesheet' id='cf7-material-design-css'  href='http://localhost:8080/app/plugins/material-design-for-contact-form-7/public/../assets/css/cf7-material-design.css?ver=2.6.4' type='text/css' media='all' />
+<link rel='stylesheet' id='wpml-menu-item-0-css'  href='//localhost:8080/app/plugins/sitepress-multilingual-cms/templates/language-switchers/menu-item/style.min.css?ver=1' type='text/css' media='all' />
+<style id='wpml-menu-item-0-inline-css' type='text/css'>
+.wpml-ls-slot-90, .wpml-ls-slot-90 a, .wpml-ls-slot-90 a:visited{color:#ffffff;}.wpml-ls-slot-90.wpml-ls-current-language, .wpml-ls-slot-90.wpml-ls-current-language a, .wpml-ls-slot-90.wpml-ls-current-language a:visited{color:#07a8c4;}
+</style>
+<link rel='stylesheet' id='wp-vollcom-digital-bootstrap-css-css'  href='http://localhost:8080/app/themes/vollcom-digital/inc/assets/css/bootstrap.min.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-vollcom-digital-fontawesome-css-css'  href='http://localhost:8080/app/themes/vollcom-digital/inc/assets/css/fontawesome.min.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-vollcom-digital-style-css'  href='http://localhost:8080/app/themes/vollcom-digital/style.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='cf7cf-style-css'  href='http://localhost:8080/app/plugins/cf7-conditional-fields/style.css?ver=1.9.16' type='text/css' media='all' />
+<link rel='stylesheet' id='wpgdprc-front-css-css'  href='http://localhost:8080/app/plugins/wp-gdpr-compliance/Assets/css/front.css?ver=1638177350' type='text/css' media='all' />
+<style id='wpgdprc-front-css-inline-css' type='text/css'>
+:root{--wp-gdpr--bar--background-color: #000000;--wp-gdpr--bar--color: #ffffff;--wp-gdpr--button--background-color: #ffffff;--wp-gdpr--button--background-color--darken: #d8d8d8;--wp-gdpr--button--color: #ffffff;}
+</style>
+
+<style id='rocket-lazyload-inline-css' type='text/css'>
+.rll-youtube-player{position:relative;padding-bottom:56.23%;height:0;overflow:hidden;max-width:100%;}.rll-youtube-player iframe{position:absolute;top:0;left:0;width:100%;height:100%;z-index:100;background:0 0}.rll-youtube-player img{bottom:0;display:block;left:0;margin:auto;max-width:100%;width:100%;position:absolute;right:0;top:0;border:none;height:auto;cursor:pointer;-webkit-transition:.4s all;-moz-transition:.4s all;transition:.4s all}.rll-youtube-player img:hover{-webkit-filter:brightness(75%)}.rll-youtube-player .play{height:72px;width:72px;left:50%;top:50%;margin-left:-36px;margin-top:-36px;position:absolute;background:url(http://localhost:8080/app/plugins/wp-rocket/assets/img/youtube.png) no-repeat;cursor:pointer}.wp-has-aspect-ratio .rll-youtube-player{position:absolute;padding-bottom:0;width:100%;height:100%;top:0;bottom:0;left:0;right:0}
+</style>
+<!--n2css--><script type='text/javascript' id='wp-sentry-browser-js-extra'>
+/* <![CDATA[ */
+var wp_sentry = {"dsn":"https:\/\/afb8128af0ba4f4a928149435dec2828@o385243.ingest.sentry.io\/5217635","release":"unknown","environment":"development","content":{"tags":{"wordpress":"5.8","language":"en-US"}}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/wp-sentry-integration/public/wp-sentry-browser.min.js?ver=3.11.1' id='wp-sentry-browser-js' defer></script>
+<script type='text/javascript' src='/wp/wp-includes/js/jquery/jquery.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type='text/javascript' src='/wp/wp-includes/js/jquery/jquery-migrate.js?ver=3.3.2' id='jquery-migrate-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/duracelltomi-google-tag-manager/js/gtm4wp-contact-form-7-tracker.js?ver=1.13.1' id='gtm4wp-contact-form-7-tracker-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/duracelltomi-google-tag-manager/js/gtm4wp-form-move-tracker.js?ver=1.13.1' id='gtm4wp-form-move-tracker-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/duracelltomi-google-tag-manager/js/gtm4wp-youtube.js?ver=1.13.1' id='gtm4wp-youtube-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://player.vimeo.com/api/player.js?ver=1.0' id='gtm4wp-vimeo-api-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/duracelltomi-google-tag-manager/js/gtm4wp-vimeo.js?ver=1.13.1' id='gtm4wp-vimeo-js' defer></script>
+<!--[if lt IE 9]>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/html5.js?ver=3.7.0' id='html5hiv-js'></script>
+<![endif]-->
+<script type='text/javascript' src='http://localhost:8080/app/plugins/ewww-image-optimizer/includes/load_webp.js?ver=582.0' id='ewww-webp-load-script-js' defer></script>
+<script type='text/javascript' id='wpgdprc-front-js-js-extra'>
+/* <![CDATA[ */
+var wpgdprcFront = {"ajaxUrl":"\/wp\/wp-admin\/admin-ajax.php","ajaxNonce":"a583d7fbb5","ajaxArg":"security","pluginPrefix":"wpgdprc","blogId":"1","isMultiSite":"","locale":"en_US","showModal":"","cookieName":"wpgdprc-consent","consentVersion":"","path":"\/","prefix":"wpgdprc"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/wp-gdpr-compliance/Assets/js/front.min.js?ver=1636968534' id='wpgdprc-front-js-js' defer></script>
+<link rel="https://api.w.org/" href="http://localhost:8080/wp-json/" /><link rel="alternate" type="application/json" href="http://localhost:8080/wp-json/wp/v2/pages/52" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/wp/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="/wp/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 5.8" />
+<link rel='shortlink' href='http://localhost:8080/?p=52' />
+<link rel="alternate" type="application/json+oembed" href="http://localhost:8080/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fabout-us%2F" />
+<link rel="alternate" type="text/xml+oembed" href="http://localhost:8080/wp-json/oembed/1.0/embed?url=http%3A%2F%2Flocalhost%3A8080%2Fabout-us%2F&#038;format=xml" />
+<meta name="generator" content="WPML ver:4.4.10 stt:1,3;" />
+
+<!-- Google Tag Manager for WordPress by gtm4wp.com -->
+<script data-cfasync="false" data-pagespeed-no-defer type="text/javascript">//<![CDATA[
+var google_tag_params = {"siteID":0,"siteName":"","pageTitle":"About us - Vollcom Digital","pagePostType":"page","pagePostType2":"single-page","pagePostDate":"6. October 2020","pagePostDateYear":"2020","pagePostDateMonth":"10","pagePostDateDay":"06","browserName":"Chrome","browserVersion":"100.0.4896.127","browserEngineName":"Blink","browserEngineVersion":"","osName":"Linux","osVersion":"","deviceType":"desktop","deviceManufacturer":"","deviceModel":"","postID":52,"postFormat":"standard","weatherCategory":"(no weather data available)","weatherDescription":"(no weather data available)","weatherTemp":0,"weatherPressure":0,"weatherWindSpeed":0,"weatherWindDeg":0,"weatherDataStatus":"Initialized with empty data","geoCountryCode":"(no geo data available)","geoCountryName":"(no geo data available)","geoRegionCode":"(no geo data available)","geoRegionName":"(no geo data available)","geoCity":"(no geo data available)","geoZipcode":"(no geo data available)","geoLatitude":"(no geo data available)","geoLongitude":"(no geo data available)"};
+	var dataLayer_content = {"siteID":0,"siteName":"","visitorLoginState":"logged-out","pageTitle":"About us - Vollcom Digital","pagePostType":"page","pagePostType2":"single-page","pagePostDate":"6. October 2020","pagePostDateYear":"2020","pagePostDateMonth":"10","pagePostDateDay":"06","browserName":"Chrome","browserVersion":"100.0.4896.127","browserEngineName":"Blink","browserEngineVersion":"","osName":"Linux","osVersion":"","deviceType":"desktop","deviceManufacturer":"","deviceModel":"","postID":52,"postFormat":"standard","weatherCategory":"(no weather data available)","weatherDescription":"(no weather data available)","weatherTemp":0,"weatherPressure":0,"weatherWindSpeed":0,"weatherWindDeg":0,"weatherDataStatus":"Initialized with empty data","geoCountryCode":"(no geo data available)","geoCountryName":"(no geo data available)","geoRegionCode":"(no geo data available)","geoRegionName":"(no geo data available)","geoCity":"(no geo data available)","geoZipcode":"(no geo data available)","geoLatitude":"(no geo data available)","geoLongitude":"(no geo data available)","google_tag_params":window.google_tag_params};
+	dataLayer.push( dataLayer_content );//]]>
+</script>
+<script type="rocketlazyloadscript" data-cfasync="false">//<![CDATA[
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.'+'js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-ML7J23');//]]>
+</script>
+<!-- End Google Tag Manager -->
+<!-- End Google Tag Manager for WordPress by gtm4wp.com --><link rel="pingback" href="/wp/xmlrpc.php">    <style type="text/css">
+        #page-sub-header { background: #fff; }
+    </style>
+    <style type="text/css">.broken_link, a.broken_link {
+	text-decoration: line-through;
+}</style><link rel="icon" href="http://localhost:8080/app/uploads/2020/10/cropped-vollcom-digital-logo-cube-square-1-32x32.jpg" sizes="32x32" />
+<link rel="icon" href="http://localhost:8080/app/uploads/2020/10/cropped-vollcom-digital-logo-cube-square-1-192x192.jpg" sizes="192x192" />
+<meta name="msapplication-TileImage" content="http://localhost:8080/app/uploads/2020/10/cropped-vollcom-digital-logo-cube-square-1-270x270.jpg" />
+		<style type="text/css" id="wp-custom-css">
+			#social-sharing {
+    position: unset;
+}
+
+#post-sidebar{
+	position:sticky;
+}
+
+#menu-item-wpml-ls-90-en{
+	margin-left: -14px;
+	font-size: 14px;
+	margin-top: 3px
+}
+
+#menu-item-wpml-ls-90-de{
+	margin-left: 5px;
+	font-size: 14px;
+	margin-top: 3px
+}
+
+.vl {
+    border-left: 1px solid ghostwhite;
+    height: 10px;
+    margin-left: 93.3%;
+    position: absolute;
+}
+
+@media only screen and (max-width: 600px) {
+	#menu-item-wpml-ls-90-en{
+	margin-left: 30px;
+    margin-top: -37px;
+}
+}		</style>
+			<!-- Fonts Plugin CSS - https://fontsplugin.com/ -->
+	<style>
+		:root {
+--font-base: Maven Pro;
+}
+body, #content, .entry-content, .post-content, .page-content, .post-excerpt, .entry-summary, .entry-excerpt, .widget-area, .widget, .sidebar, #sidebar, footer, .footer, #footer, .site-footer {
+font-family: "Maven Pro";
+ }
+	</style>
+	<!-- Fonts Plugin CSS -->
+	<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript></head>
+
+<body class="page-template page-template-blank-page page-template-blank-page-php page page-id-52 wp-embed-responsive group-blog">
+<div id="page" class="site">
+
+    <!--Header-->
+    <header id="masthead" class="navbar-light" role="banner">
+        <nav class="navbar navbar-expand-lg navbar-dark has-braun-background-color">
+            <div class="container">
+                <div class="navbar-brand py-0">
+                                            <a href="http://localhost:8080/">
+                            <img class="img-fluid"
+                                 src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2060%200'%3E%3C/svg%3E"
+                                 alt="Vollcom Digital" width="60" data-lazy-src="https://localhost:8080/app/uploads/2021/11/vollcom-digital-logo-cube.png"><noscript><img class="img-fluid"
+                                 src="https://localhost:8080/app/uploads/2021/11/vollcom-digital-logo-cube.png"
+                                 alt="Vollcom Digital" width="60"></noscript>
+                        </a>
+                                        <a class="site-title text-white"
+                       href="http://localhost:8080/">Vollcom Digital</a>
+                </div>
+                <li class="menu-item menu-item-type-search menu-item-search-mobile nav-item text-white mx-3"><i
+                            class="far fa-search"></i></li>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
+                        aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div id="main-nav" class="collapse navbar-collapse"><ul id="menu-navigation-menu" class="navbar-nav ml-auto"><li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-349" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-349 nav-item"><a title="Home" href="http://localhost:8080/" class="nav-link">Home</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-185" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-185 nav-item"><a title="Blog" href="http://localhost:8080/blog/" class="nav-link">Blog</a></li>
+<li style="position:relative" itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-1795" class="menu-item menu-item-type-post_type_archive menu-item-object-jobs menu-item-1795 nav-item"><a title="Jobs" href="http://localhost:8080/jobs/" class="nav-link">Jobs</a><span class="badge vd-badge-pill" >4</span></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-186" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-52 current_page_item active menu-item-186 nav-item"><a title="About us" href="http://localhost:8080/about-us/" class="nav-link" aria-current="page">About us</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-3477" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3477 nav-item"><a title="Services" href="#services" class="nav-link">Services</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-187" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-187 nav-item"><a title="Contact" href="http://localhost:8080/contact/" class="nav-link">Contact</a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-wpml-ls-90-de" class="menu-item wpml-ls-slot-90 wpml-ls-item wpml-ls-item-de wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-90-de nav-item"><a title="DE" href="http://localhost:8080/de/ueber-uns/" class="nav-link"><span class="wpml-ls-display">DE</span></a></li>
+<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" id="menu-item-wpml-ls-90-en" class="menu-item wpml-ls-slot-90 wpml-ls-item wpml-ls-item-en wpml-ls-current-language wpml-ls-menu-item wpml-ls-last-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-wpml-ls-90-en nav-item"><a title="EN" href="http://localhost:8080/about-us/" class="nav-link"><span class="wpml-ls-display">EN</span></a></li>
+<li style="margin-top: 10px; display:none;" class="menu-item menu-item-type-search menu-item-search nav-item text-white mx-3"><i class="far fa-search"></i></li></ul></div>
+            </div>
+        </nav>
+            </header>
+    <div class="search-container">
+        <div class="container">
+            <div id="searchOverlay" class="overlay d-none">
+                <div class="overlay-content">
+                    <form action="http://localhost:8080/" method="get" id="searchform">
+                        <span class="overlay-search-icon"><i class="far fa-search"></i></span>
+                        <input type="text" class="search-input"
+                               placeholder="What Are you Looking for?"
+                               name="s">
+                        <span class="close-search-btn mr-2"
+                              title="Close Search"><i
+                                    class="far fa-times"></i></span>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/.Header-->
+
+    <section id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            
+<article id="post-52" class="post-52 page type-page status-publish hentry">
+	<div class="entry-content">
+		
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div class="wp-block-cover has-background-dim-70 has-braun-background-color has-background-dim"><img width="1920" height="1280" class="wp-block-cover__image-background wp-image-216 ewww_webp_lazy_load" alt="" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%201280'%3E%3C/svg%3E" data-object-fit="cover" data-lazy-srcset="http://localhost:8080/app/uploads/2020/10/our-story.jpg 1920w, http://localhost:8080/app/uploads/2020/10/our-story-300x200.jpg 300w, http://localhost:8080/app/uploads/2020/10/our-story-1024x683.jpg 1024w, http://localhost:8080/app/uploads/2020/10/our-story-768x512.jpg 768w, http://localhost:8080/app/uploads/2020/10/our-story-1536x1024.jpg 1536w" data-lazy-sizes="(max-width: 1920px) 100vw, 1920px" data-lazy-src="https://vollcom-digital.com/app/uploads/2020/10/our-story.jpg" data-lazy-srcset-webp="http://localhost:8080/app/uploads/2020/10/our-story.jpg.webp 1920w, http://localhost:8080/app/uploads/2020/10/our-story-300x200.jpg.webp 300w, http://localhost:8080/app/uploads/2020/10/our-story-1024x683.jpg.webp 1024w, http://localhost:8080/app/uploads/2020/10/our-story-768x512.jpg.webp 768w, http://localhost:8080/app/uploads/2020/10/our-story-1536x1024.jpg.webp 1536w" /><noscript><img width="1920" height="1280" class="wp-block-cover__image-background wp-image-216" alt="" src="https://vollcom-digital.com/app/uploads/2020/10/our-story.jpg" data-object-fit="cover" srcset="http://localhost:8080/app/uploads/2020/10/our-story.jpg 1920w, http://localhost:8080/app/uploads/2020/10/our-story-300x200.jpg 300w, http://localhost:8080/app/uploads/2020/10/our-story-1024x683.jpg 1024w, http://localhost:8080/app/uploads/2020/10/our-story-768x512.jpg 768w, http://localhost:8080/app/uploads/2020/10/our-story-1536x1024.jpg 1536w" sizes="(max-width: 1920px) 100vw, 1920px" /></noscript><div class="wp-block-cover__inner-container"><div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<h1 class="has-text-align-center has-weiss-color has-text-color">Experience you can trust</h1>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-text-align-center" style="font-size:21px">From year to year we strive to invent the most innovative technologies that is used by both midenterprises and space enterprises.</p>
+
+</div>
+</div></div>
+</div></div>
+
+
+
+<div id="story" class="wp-block-group"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<p class="has-text-align-center"><strong><span style="color:#25A6B5" class="tadv-color">About Us</span></strong></p>
+
+
+
+<h2 class="has-text-align-center">Our Story</h2>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-text-align-center">Vollcom Digital is the company that brings the right people, knowledge and tools together to get digital products done. From enterprise to mid-sized companies around the world &#8211; we help them all to drive their business forward.</p>
+
+</div>
+
+
+
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+</div></div>
+
+
+
+<div id="team" class="wp-block-group has-hellgrau-background-color"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<div class="wp-block-columns">
+<div class="wp-block-column">
+<p class="has-hellblau-color has-text-color"><strong>Our Team</strong></p>
+
+
+
+<h2>Experience and integrity by our team</h2>
+
+
+
+<p>The right tools wielded by the right team make everything possible. We strive to build the most innovative digital products by our experienced people.</p>
+</div>
+
+
+
+<div class="wp-block-column">
+<figure class="wp-block-image size-full img-fluid"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="" class="wp-image-368" height="NaN" data-lazy-srcset="http://localhost:8080/app/uploads/2021/01/Team.png 800w, http://localhost:8080/app/uploads/2021/01/Team-300x225.png 300w, http://localhost:8080/app/uploads/2021/01/Team-768x576.png 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://vollcom-digital.com/app/uploads/2021/01/Team.png" /><noscript><img src="https://vollcom-digital.com/app/uploads/2021/01/Team.png" alt="" class="wp-image-368" height="NaN" srcset="http://localhost:8080/app/uploads/2021/01/Team.png 800w, http://localhost:8080/app/uploads/2021/01/Team-300x225.png 300w, http://localhost:8080/app/uploads/2021/01/Team-768x576.png 768w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+</div>
+</div>
+
+</div>
+
+
+
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+</div></div>
+
+
+
+<div id="culture" class="wp-block-group"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<div class="wp-block-columns">
+<div class="wp-block-column">
+<figure class="wp-block-image size-large"><img width="800" height="459" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20800%20459'%3E%3C/svg%3E" alt="" class="wp-image-363" data-lazy-srcset="http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak.png 800w, http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak-300x172.png 300w, http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak-768x441.png 768w" data-lazy-sizes="(max-width: 800px) 100vw, 800px" data-lazy-src="https://vollcom-digital.com/app/uploads/2021/01/vollcom-culture-peak.png" /><noscript><img width="800" height="459" src="https://vollcom-digital.com/app/uploads/2021/01/vollcom-culture-peak.png" alt="" class="wp-image-363" srcset="http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak.png 800w, http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak-300x172.png 300w, http://localhost:8080/app/uploads/2021/01/vollcom-culture-peak-768x441.png 768w" sizes="(max-width: 800px) 100vw, 800px" /></noscript></figure>
+</div>
+
+
+
+<div class="wp-block-column">
+<h2>Our Work Culture</h2>
+
+
+
+<p>We always try to make a great output by this culture:</p>
+
+
+
+<p><strong>P</strong>erformance<br>This is where it all starts. We perform every day and helping our customers to do so.</p>
+
+
+
+<p><strong>E</strong>ntrepreneurship<br>We strive to improve every single day.</p>
+
+
+
+<p><strong>A</strong>uthenticity<br>This is how we communicate internally and externally.</p>
+
+
+
+<p><strong>K</strong>indness<br>Great work is a result of compassion and doing things by heart.</p>
+</div>
+</div>
+
+</div>
+
+
+
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer d-none d-md-block"></div>
+</div></div>
+
+
+
+<div id="partners" class="wp-block-group"><div class="wp-block-group__inner-container"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<p class="has-text-align-center"><strong><span style="color:#25A6B5" class="tadv-color">Blog</span></strong></p>
+
+
+
+<h2 class="has-text-align-center">Check our Stories!</h2>
+
+
+
+<p class="has-text-align-center">We share digital trends, strategies and stories from the team behind company</p>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<!--Blog Posts Carddeck-->
+<div id="blog-carddeck-block_5f7cc9aa41d14" class="row row-cols-1 row-cols-md-2">
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/digital-lifestyle/test-blog/">
+                
+                                            <!--Card image-->
+                        <img width="1517" height="969" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201517%20969'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2022/04/kickstart-4.jpg" /><noscript><img width="1517" height="969" src="http://localhost:8080/app/uploads/2022/04/kickstart-4.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./digital-lifestyle/">Digital Lifestyle</a></div>                    
+	                                        <a href="http://localhost:8080/blog/digital-lifestyle/test-blog/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">test blog</h3>
+                        <p class="card-text black-text">here am creating new test blog fro testing here am creating new test blog fro testing here am creating new test blog fro testing here am creating new test blog fro testing here am creating new test blog [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2022-04-05T13:00:36+02:00" itemprop="datePublished">Apr 5, 2022</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/remote-work/how-to-master-remote-communication/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="2048" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%202048'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/11/surface-HJgaV1qjHS0-unsplash-scaled-1.jpg" /><noscript><img width="2560" height="2048" src="http://localhost:8080/app/uploads/2021/11/surface-HJgaV1qjHS0-unsplash-scaled-1.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./remote-work/">Remote Work</a></div>                    
+	                                        <a href="http://localhost:8080/blog/remote-work/how-to-master-remote-communication/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">How to master remote communication</h3>
+                        <p class="card-text black-text">What is remote communication?&nbsp;&nbsp; Remote communication allows the company to have employees from different locations and communicate with them and work together as a team. To make this as easy as possible, various tools can be used to [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-11-11T13:18:33+01:00" itemprop="datePublished">Nov 11, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/project-management/five-essential-soft-skills-of-project-management/">
+                
+                                            <!--Card image-->
+                        <img width="1707" height="2560" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201707%202560'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/02/keren-levand-vKTEG8DVS6g-unsplash-scaled.jpg" /><noscript><img width="1707" height="2560" src="http://localhost:8080/app/uploads/2021/02/keren-levand-vKTEG8DVS6g-unsplash-scaled.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./project-management/">Project management</a></div>                    
+	                                        <a href="http://localhost:8080/blog/project-management/five-essential-soft-skills-of-project-management/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">Five essential soft skills of Project Management</h3>
+                        <p class="card-text black-text">The task of a project manager is to accompany the project from start to finish. To achieve this goal,&nbsp;several skills and tasks can help. Since hard skills such as risk management, project planning or budgeting are often not [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-10-28T11:00:17+02:00" itemprop="datePublished">Oct 28, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/tips/building-a-feedback-culture/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="1707" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201707'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/01/brooke-cagle-uHVRvDr7pg-unsplash-scaled.jpg" /><noscript><img width="2560" height="1707" src="http://localhost:8080/app/uploads/2021/01/brooke-cagle-uHVRvDr7pg-unsplash-scaled.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./tips/">Tips</a></div>                    
+	                                        <a href="http://localhost:8080/blog/tips/building-a-feedback-culture/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">Building a feedback culture</h3>
+                        <p class="card-text black-text">Creating a feedback culture relies on a foundation of trust and communication. Leaders must ensure communication habits are established and bad habits are eliminated. However, a healthy culture can only be created through healthy and honest feedback between [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-10-28T09:44:12+02:00" itemprop="datePublished">Oct 28, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/project-management/time-management-in-project-management/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="1610" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201610'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/03/van-tay-media-Tv2AtkG_ilM-unsplash-scaled.jpg" /><noscript><img width="2560" height="1610" src="http://localhost:8080/app/uploads/2021/03/van-tay-media-Tv2AtkG_ilM-unsplash-scaled.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./project-management/">Project management</a></div>                    
+	                                        <a href="http://localhost:8080/blog/project-management/time-management-in-project-management/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">Time Management in Project Management</h3>
+                        <p class="card-text black-text">Time management is part of project management. Project managers must ensure that the team is always organized, effective, and on time. After all, time is a scarce resource in any project. However, many other aspects&nbsp;of&nbsp;time management are not [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-10-21T10:35:00+02:00" itemprop="datePublished">Oct 21, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/project-management/how-to-become-a-project-manager-in-2021/">
+                
+                                            <!--Card image-->
+                        <img width="1440" height="2560" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201440%202560'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/10/maxime-xzwsMmXTtzI-unsplash-scaled-1.jpg" /><noscript><img width="1440" height="2560" src="http://localhost:8080/app/uploads/2021/10/maxime-xzwsMmXTtzI-unsplash-scaled-1.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./project-management/">Project management</a></div>                    
+	                                        <a href="http://localhost:8080/blog/project-management/how-to-become-a-project-manager-in-2021/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">How to become a project manager in 2021</h3>
+                        <p class="card-text black-text">Perhaps you are considering becoming a project manager or are already working in project management. In a project, there are several benefits and challenges for the project manager.&nbsp;&nbsp;Project managers organize teams to achieve a specific goal or complete [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-10-13T17:01:05+02:00" itemprop="datePublished">Oct 13, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/digital-lifestyle/pharmaceutical-marketing-strategies/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="1707" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201707'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/10/campaign-creators-yktK2qaiVHI-unsplash-scaled-1.jpg" /><noscript><img width="2560" height="1707" src="http://localhost:8080/app/uploads/2021/10/campaign-creators-yktK2qaiVHI-unsplash-scaled-1.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./digital-lifestyle/">Digital Lifestyle</a></div>                    
+	                                        <a href="http://localhost:8080/blog/digital-lifestyle/pharmaceutical-marketing-strategies/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">Pharmaceutical Marketing Strategies</h3>
+                        <p class="card-text black-text">Pharmaceutical companies have many challenges to overcome when it comes to marketing their products. Because there are strong regulations, but there are also many pharmaceutical marketing strategies that you can use to gain attention&nbsp;for&nbsp;your products. The digital age [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-10-06T11:36:03+02:00" itemprop="datePublished">Oct 6, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/online-marketing/societal-marketing-definition-concept-and-advantages/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="1707" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201707'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/09/will-francis-r02wxT3-PYw-unsplash-scaled-1.jpg" /><noscript><img width="2560" height="1707" src="http://localhost:8080/app/uploads/2021/09/will-francis-r02wxT3-PYw-unsplash-scaled-1.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./online-marketing/">Online Marketing</a></div>                    
+	                                        <a href="http://localhost:8080/blog/online-marketing/societal-marketing-definition-concept-and-advantages/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">Societal Marketing – Definition, Concept, and Advantages</h3>
+                        <p class="card-text black-text">What&nbsp;is&nbsp;Societal&nbsp;Marketing?&nbsp; Societal marketing puts human welfare first, not profit. Social responsibility is paramount, so a Societal Marketing Concept develops a marketing strategy that adds value to customers&nbsp;to improve the well-being of customers and society. It is an advanced [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-09-29T14:44:18+02:00" itemprop="datePublished">Sep 29, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/remote-work/5-tips-for-building-a-virtual-team/">
+                
+                                            <!--Card image-->
+                        <img width="2560" height="1707" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%202560%201707'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/03/studio-republic-fotKKqWNMQ4-unsplash-scaled.jpg" /><noscript><img width="2560" height="1707" src="http://localhost:8080/app/uploads/2021/03/studio-republic-fotKKqWNMQ4-unsplash-scaled.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./remote-work/">Remote Work</a></div>                    
+	                                        <a href="http://localhost:8080/blog/remote-work/5-tips-for-building-a-virtual-team/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">5 Tips for building a virtual team</h3>
+                        <p class="card-text black-text">What is a virtual team?&nbsp; A virtual team consists of a group of people who interact with each other through electronic communication. They can be in the same place, but most often the members of the team are [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-09-23T08:57:40+02:00" itemprop="datePublished">Sep 23, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+        <div class="col mb-4">
+        <div class="card h-100 border wow bg-transparent" data-wow-delay="0.6s">
+            <div class="block-card">
+
+                                    <a href="http://localhost:8080/blog/agility-scrum/how-to-become-a-scrum-master/">
+                
+                                            <!--Card image-->
+                        <img width="1920" height="2560" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201920%202560'%3E%3C/svg%3E" class="card-img wp-post-image" alt="" data-lazy-src="http://localhost:8080/app/uploads/2021/09/irfan-simsar-wxWulfjN-G0-unsplash-scaled-1.jpg" /><noscript><img width="1920" height="2560" src="http://localhost:8080/app/uploads/2021/09/irfan-simsar-wxWulfjN-G0-unsplash-scaled-1.jpg" class="card-img wp-post-image" alt="" /></noscript>                        <div class="card-img-overlay"></div>
+                        <!--/.Card image-->
+                    
+                                    </a>
+                
+                <!--Card footer-->
+                <div class="card-footer">
+                    
+                                            <div class="mb-1"><a href="http://localhost:8080/blog/./agility-scrum/">Agility &amp; Scrum</a></div>                    
+	                                        <a href="http://localhost:8080/blog/agility-scrum/how-to-become-a-scrum-master/">
+                                            <h3 class="card-title font-weight-bold h4 text-dark-blue">How to become a Scrum Master</h3>
+                        <p class="card-text black-text">In order to deliver valuable products to the customer, it is necessary to support your team to deliver the products in short time frames, to get quick feedback, and to be able to make continuous improvements. The Scrum [&hellip;]</p>
+                        <time class="has-petrol-color" datetime="2021-09-15T11:42:57+02:00" itemprop="datePublished">Sep 15, 2021</time>
+                                            </a>
+                                    </div>
+                <!--/.Card footer-->
+
+            </div>
+        </div>
+    </div>
+    </div>
+<!--/.Blog Posts Carddeck-->
+
+</div>
+
+
+
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+</div></div></div>
+
+
+
+<div class="wp-block-group"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer d-none d-md-block"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<p class="has-text-align-center"><strong><span style="color:#25A6B5" class="tadv-color">Instagram</span></strong></p>
+
+
+
+<h2 class="has-text-align-center">Follow us to get more Insights</h2>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+        <div class="spotlight-instagram-feed" data-feed-var="feed6260fe2eee073"></div>
+        <input type="hidden" id="sli__f__feed6260fe2eee073" data-json="{&quot;accounts&quot;:[389,389],&quot;hashtags&quot;:[],&quot;tagged&quot;:[],&quot;layout&quot;:&quot;grid&quot;,&quot;numColumns&quot;:{&quot;desktop&quot;:6,&quot;tablet&quot;:3,&quot;phone&quot;:1},&quot;highlightFreq&quot;:{&quot;desktop&quot;:7},&quot;sliderPostsPerPage&quot;:{&quot;desktop&quot;:5},&quot;sliderNumScrollPosts&quot;:{&quot;desktop&quot;:1},&quot;mediaType&quot;:&quot;all&quot;,&quot;postOrder&quot;:&quot;date_desc&quot;,&quot;numPosts&quot;:{&quot;desktop&quot;:6,&quot;tablet&quot;:3,&quot;phone&quot;:3},&quot;linkBehavior&quot;:{&quot;desktop&quot;:&quot;lightbox&quot;,&quot;phone&quot;:&quot;new_tab&quot;},&quot;feedWidth&quot;:{&quot;desktop&quot;:&quot;&quot;},&quot;feedHeight&quot;:{&quot;desktop&quot;:&quot;&quot;},&quot;feedPadding&quot;:{&quot;desktop&quot;:24,&quot;tablet&quot;:14,&quot;phone&quot;:10},&quot;imgPadding&quot;:{&quot;desktop&quot;:16,&quot;tablet&quot;:10,&quot;phone&quot;:6},&quot;textSize&quot;:{&quot;desktop&quot;:&quot;&quot;,&quot;tablet&quot;:&quot;&quot;,&quot;phone&quot;:&quot;&quot;},&quot;bgColor&quot;:{&quot;r&quot;:255,&quot;g&quot;:255,&quot;b&quot;:255,&quot;a&quot;:1},&quot;textColorHover&quot;:{&quot;r&quot;:255,&quot;g&quot;:255,&quot;b&quot;:255,&quot;a&quot;:1},&quot;bgColorHover&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0,&quot;a&quot;:0.5},&quot;hoverInfo&quot;:[&quot;likes_comments&quot;,&quot;insta_link&quot;],&quot;showHeader&quot;:{&quot;desktop&quot;:true},&quot;headerInfo&quot;:{&quot;desktop&quot;:[]},&quot;headerAccount&quot;:389,&quot;headerStyle&quot;:{&quot;desktop&quot;:&quot;normal&quot;,&quot;phone&quot;:&quot;centered&quot;},&quot;headerTextSize&quot;:{&quot;desktop&quot;:&quot;&quot;},&quot;headerPhotoSize&quot;:{&quot;desktop&quot;:50},&quot;headerTextColor&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0,&quot;a&quot;:1},&quot;headerBgColor&quot;:{&quot;r&quot;:255,&quot;g&quot;:255,&quot;b&quot;:255,&quot;a&quot;:1},&quot;headerPadding&quot;:{&quot;desktop&quot;:0},&quot;customBioText&quot;:&quot;&quot;,&quot;customProfilePic&quot;:0,&quot;includeStories&quot;:false,&quot;storiesInterval&quot;:5,&quot;showCaptions&quot;:{&quot;desktop&quot;:false},&quot;captionMaxLength&quot;:{&quot;desktop&quot;:0},&quot;captionRemoveDots&quot;:false,&quot;captionSize&quot;:{&quot;desktop&quot;:0},&quot;captionColor&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0,&quot;a&quot;:1},&quot;showLikes&quot;:{&quot;desktop&quot;:false},&quot;showComments&quot;:{&quot;desktop&quot;:false},&quot;lcIconSize&quot;:{&quot;desktop&quot;:14},&quot;likesIconColor&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0,&quot;a&quot;:1},&quot;commentsIconColor&quot;:{&quot;r&quot;:0,&quot;g&quot;:0,&quot;b&quot;:0,&quot;a&quot;:1},&quot;lightboxShowSidebar&quot;:false,&quot;numLightboxComments&quot;:50,&quot;showLoadMoreBtn&quot;:{&quot;desktop&quot;:false},&quot;loadMoreBtnText&quot;:&quot;Load more&quot;,&quot;loadMoreBtnTextColor&quot;:{&quot;r&quot;:255,&quot;g&quot;:255,&quot;b&quot;:255,&quot;a&quot;:1},&quot;loadMoreBtnBgColor&quot;:{&quot;r&quot;:0,&quot;g&quot;:149,&quot;b&quot;:246,&quot;a&quot;:1},&quot;autoload&quot;:false,&quot;showFollowBtn&quot;:{&quot;desktop&quot;:true},&quot;followBtnText&quot;:&quot;Follow Us on Instagram&quot;,&quot;followBtnTextColor&quot;:{&quot;r&quot;:255,&quot;g&quot;:255,&quot;b&quot;:255,&quot;a&quot;:1},&quot;followBtnBgColor&quot;:{&quot;r&quot;:7,&quot;g&quot;:168,&quot;b&quot;:196,&quot;a&quot;:1},&quot;followBtnLocation&quot;:{&quot;desktop&quot;:&quot;header&quot;,&quot;phone&quot;:&quot;bottom&quot;},&quot;hashtagWhitelist&quot;:[],&quot;hashtagBlacklist&quot;:[],&quot;captionWhitelist&quot;:[],&quot;captionBlacklist&quot;:[],&quot;hashtagWhitelistSettings&quot;:true,&quot;hashtagBlacklistSettings&quot;:true,&quot;captionWhitelistSettings&quot;:true,&quot;captionBlacklistSettings&quot;:true,&quot;moderation&quot;:[],&quot;moderationMode&quot;:&quot;blacklist&quot;,&quot;promotionEnabled&quot;:true,&quot;autoPromotionsEnabled&quot;:true,&quot;globalPromotionsEnabled&quot;:true,&quot;promotions&quot;:[],&quot;className&quot;:&quot;&quot;}" />
+        <input type="hidden" id="sli__a__feed6260fe2eee073" data-json="[{&quot;id&quot;:389,&quot;type&quot;:&quot;BUSINESS&quot;,&quot;userId&quot;:&quot;17841405913672600&quot;,&quot;username&quot;:&quot;vollcom_digital&quot;,&quot;bio&quot;:&quot;We are a multi-industry IT- specialist for digital transformation. We provide software development, IT-consulting and digital analysis\n\ud83d\udc47&quot;,&quot;customBio&quot;:&quot;&quot;,&quot;profilePicUrl&quot;:&quot;https:\/\/scontent.xx.fbcdn.net\/v\/t51.2885-15\/159543931_471000770863703_1758128216900226736_n.jpg?_nc_cat=110&amp;ccb=1-5&amp;_nc_sid=86c713&amp;_nc_ohc=UVgNJP3QcOQAX8nYlgD&amp;_nc_ht=scontent.xx&amp;edm=AL-3X8kEAAAA&amp;oh=1fa6256ed593e624507bf3c7385639db&amp;oe=61502286&quot;,&quot;customProfilePicUrl&quot;:&quot;&quot;,&quot;mediaCount&quot;:&quot;174&quot;,&quot;followersCount&quot;:&quot;504&quot;,&quot;usages&quot;:[]}]" />
+        
+</div>
+
+
+
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer d-none d-md-block"></div>
+</div></div>
+
+
+
+<div id="updates" class="wp-block-group"><div class="wp-block-group__inner-container">
+<div style="height:98px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-container container mb-2">
+	
+
+<h2 class="has-text-align-center">Want updates?</h2>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<p class="has-text-align-center">Input your email into form below to get updates from us</p>
+
+
+
+<div style="height:24px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+<div class="wp-bootstrap-blocks-row row align-items-center">
+	
+
+<div class="col-12 col-md-8">
+			
+
+<div class="wp-block-contact-form-7-contact-form-selector"><div role="form" class="wpcf7" id="wpcf7-f312-p52-o1" lang="de-DE" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/about-us/#wpcf7-f312-p52-o1" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="312" />
+<input type="hidden" name="_wpcf7_version" value="5.4.2" />
+<input type="hidden" name="_wpcf7_locale" value="de_DE" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f312-p52-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="52" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+<input type="hidden" name="_wpcf7cf_hidden_group_fields" value="" />
+<input type="hidden" name="_wpcf7cf_hidden_groups" value="" />
+<input type="hidden" name="_wpcf7cf_visible_groups" value="" />
+<input type="hidden" name="_wpcf7cf_repeaters" value="[]" />
+<input type="hidden" name="_wpcf7cf_steps" value="{}" />
+<input type="hidden" name="_wpcf7cf_options" value="{&quot;form_id&quot;:312,&quot;conditions&quot;:[],&quot;settings&quot;:{&quot;animation&quot;:&quot;yes&quot;,&quot;animation_intime&quot;:200,&quot;animation_outtime&quot;:200,&quot;conditions_ui&quot;:&quot;normal&quot;,&quot;notice_dismissed&quot;:false,&quot;notice_dismissed_rollback-cf7-5.3.2&quot;:true}}" />
+<input type="hidden" name="_wpcf7_recaptcha_response" value="" />
+</div>
+<p>        <div id="cf7md-form" class="cf7md-form">
+            <div class="mdc-layout-grid">
+                <div class="mdc-layout-grid__inner">
+                                        
+<div class="row align-content-center">
+<div class="col-12 col-md-7 pl-md-0 mb-3">
+
+        <div class="cf7md-item cf7md-text mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            <br />
+<span class="wpcf7-form-control-wrap your-email"><input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" /></span><br />
+                        <div style="display: none;" class="cf7md-text-html">
+                <div class="mdc-text-field  mdc-text-field--outlined">
+                                                                <div class="mdc-notched-outline">
+                            <div class="mdc-notched-outline__leading"></div>
+                            <div class="mdc-notched-outline__notch">
+                                <label class="mdc-floating-label">Your Email</label>
+                            </div>
+                            <div class="mdc-notched-outline__trailing"></div>
+                        </div>
+                                        </div>
+            </div>
+        </div>
+        
+</div>
+<div class="col-12 col-md-5 pr-md-0">
+
+        <div  class="cf7md-item cf7md-submit  mdc-layout-grid__cell mdc-layout-grid__cell--span-12" data-button-style="raised">
+
+            <br />
+<input type="submit" value="Send" class="wpcf7-form-control wpcf7-submit" /><br />
+            <svg class="cf7md-spinner" width="25px" height="25px" viewBox="0 0 66 66"
+                 xmlns="http://www.w3.org/2000/svg">
+                <circle class="cf7md-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33"
+                        r="30"></circle>
+            </svg>
+        </div>
+        
+</div>
+</div>
+<div class="google-recaptcha-brand">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.
+</div>
+        <div class="cf7md-item cf7md-accept cf7md-is-wpcf7v5 mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+                        <br />
+<label for="cf7md1"><br />
+<span class="wpcf7-form-control-wrap acceptance-878"><span class="wpcf7-form-control wpcf7-acceptance"><span class="wpcf7-list-item"><input type="checkbox" name="acceptance-878" value="1" aria-invalid="false" /></span></span></span><br />
+</label><br />
+            <label class="cf7md-accept-label"></label>
+            <div style="display: none;" class="cf7md-checkbox-html">
+                <div class="mdc-checkbox__background">
+                    <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                        <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                    </svg>
+                    <div class="mdc-checkbox__mixedmark"></div>
+                </div>
+            </div>
+                    </div>
+        
+        <div class="cf7md-item cf7md-captcha mdc-layout-grid__cell mdc-layout-grid__cell--span-12">
+            
+
+        </div>
+        
+                                    </div>
+            </div>
+        </div>
+        </p>
+<div class="wpcf7-response-output" aria-hidden="true"></div></form></div></div>
+
+
+
+<p></p>
+
+	</div>
+
+
+
+<div class="col-12 col-md-4 d-none d-lg-block">
+			
+
+<figure class="wp-block-image size-full is-resized img-fluid float-right"><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%20299'%3E%3C/svg%3E" alt="Vollcom Digital Newsletter" class="wp-image-2333" height="299" data-lazy-srcset="http://localhost:8080/app/uploads/2021/05/newsletter.png 620w, http://localhost:8080/app/uploads/2021/05/newsletter-300x256.png 300w" data-lazy-sizes="(max-width: 620px) 100vw, 620px" data-lazy-src="https://localhost:8080/app/uploads/2021/05/newsletter.png" /><noscript><img src="https://localhost:8080/app/uploads/2021/05/newsletter.png" alt="Vollcom Digital Newsletter" class="wp-image-2333" height="299" srcset="http://localhost:8080/app/uploads/2021/05/newsletter.png 620w, http://localhost:8080/app/uploads/2021/05/newsletter-300x256.png 300w" sizes="(max-width: 620px) 100vw, 620px" /></noscript></figure>
+
+
+
+<p></p>
+
+	</div>
+
+</div>
+
+
+
+<p></p>
+
+</div>
+</div></div>
+
+
+
+<p></p>
+	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+        </main><!-- #main -->
+    </section><!-- #primary -->
+
+</div>
+</div>
+</div>
+<div id="footer">
+
+    <div class="position-relative d-flex justify-content-center py-5 mt-n5">
+        <div class="position-absolute z-1 b-3">
+            <div class="triangle-up">
+                <img class="ml-n3 pt-3"
+                     src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2055%2075'%3E%3C/svg%3E"
+                     alt="Vollcom digital cube" width="55" height="75" style="margin-left: -1.7rem !important;" data-lazy-src="http://localhost:8080/app/themes/vollcom-digital/inc/assets/images/vollcom-digital-logo-cube.png"><noscript><img class="ml-n3 pt-3"
+                     src="http://localhost:8080/app/themes/vollcom-digital/inc/assets/images/vollcom-digital-logo-cube.png"
+                     alt="Vollcom digital cube" width="55" height="75" style="margin-left: -1.7rem !important;"></noscript>
+
+            </div>
+        </div>
+        <div class="has-dunkelblau-background-color py-4 position-absolute w-100 z-0" style="bottom: 0"></div>
+    </div>
+            <div id="footer-widget" class="row m-0 py-3 has-dunkelblau-background-color">
+            <div class="container">
+                                                <div class="d-flex justify-content-center pb-3">
+                    <section id="custom_html-2" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><!--Twitter-->
+<a class="tw-ic mr-3" role="button" href="https://twitter.com/vollcom_digital"><i class="fab fa-lg fa-twitter text-white"></i></a>
+<!--Instagram-->
+<a class="ins-ic mr-3" role="button" href="https://www.instagram.com/vollcom_digital/"><i class="fab fa-lg fa-instagram text-white"></i></a>
+<!--LinkedIn-->
+<a class="li-ic mr-3" role="button" href="https://linkedin.com/company/vollcom-digital-gmbh"><i class="fab fa-lg fa-linkedin-in text-white"></i></a>
+<!--Facebook-->
+<a class="fb-ic mr-3" role="button" href="https://www.facebook.com/vollcomdigital/"><i class="fab fa-lg fa-facebook-f text-white"></i></a></div></section>                </div>
+                            </div>
+        </div>
+
+    <footer id="colophon"
+            class="site-footer has-hellblau-background-color navbar-light"
+            role="contentinfo">
+        <div class="container py-3">
+            <div class="row">
+                <div class="site-info white-text col-12 col-md-5 mb-3 mb-md-0">
+                    &copy; Copyright <span class="white-text">Vollcom Digital</span> 2022                    . All Rights Reserved.                </div>
+                                    <div class="col-12 col-md-7"><section id="nav_menu-6" class="widget widget_nav_menu legal-menu"><div class="menu-legal-footer-container"><ul id="menu-legal-footer" class="menu"><li id="menu-item-200" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-200"><a href="/privacy-policy">Privacy</a></li>
+<li id="menu-item-199" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-199"><a href="http://localhost:8080/terms/">Terms</a></li>
+<li id="menu-item-196" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-196"><a href="http://localhost:8080/cookie-policy/">Cookie Policy</a></li>
+<li id="menu-item-195" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-195"><a href="http://localhost:8080/legal-informations/">Imprint</a></li>
+</ul></div></div></div>
+                            </div>
+        </div>
+    </footer>
+</div>
+</div>
+
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-ML7J23"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) --><link rel='stylesheet' id='sli-common-css'  href='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/styles/common.css?ver=0.5.4' type='text/css' media='all' />
+<link rel='stylesheet' id='dashicons-css'  href='/wp/wp-includes/css/dashicons.css?ver=5.8' type='text/css' media='all' />
+<link rel='stylesheet' id='sli-front-css'  href='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/styles/front-app.css?ver=0.5.4' type='text/css' media='all' />
+<script type='text/javascript' src='http://localhost:8080/app/plugins/material-design-for-contact-form-7/public/../assets/js/lib/autosize.min.js?ver=1.0' id='autosize-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/material-design-for-contact-form-7/public/../assets/js/cf7-material-design-bundle.js?ver=2.6.4' id='cf7-material-design-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/duracelltomi-google-tag-manager/js/gtm4wp-users.js?ver=1.13.1' id='gtm4wp-user-reg-login-script-js' defer></script>
+<script type='text/javascript' id='rocket-browser-checker-js-after'>
+class RocketBrowserCompatibilityChecker {
+
+	constructor( options ) {
+		this.passiveSupported = false;
+
+		this._checkPassiveOption( this );
+		this.options = this.passiveSupported ? options : false;
+	}
+
+	/**
+	 * Initializes browser check for addEventListener passive option.
+	 *
+	 * @link https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
+	 * @private
+	 *
+	 * @param self Instance of this object.
+	 * @returns {boolean}
+	 */
+	_checkPassiveOption( self ) {
+		try {
+			const options = {
+				// This function will be called when the browser attempts to access the passive property.
+				get passive() {
+					self.passiveSupported = true;
+					return false;
+				}
+			};
+
+			window.addEventListener( 'test', null, options );
+			window.removeEventListener( 'test', null, options );
+		} catch ( err ) {
+			self.passiveSupported = false;
+		}
+	}
+
+	/**
+	 * Checks if the browser supports requestIdleCallback and cancelIdleCallback. If no, shims its behavior with a polyfills.
+	 *
+	 * @link @link https://developers.google.com/web/updates/2015/08/using-requestidlecallback
+	 */
+	initRequestIdleCallback() {
+		if ( ! 'requestIdleCallback' in window ) {
+			window.requestIdleCallback = ( cb ) => {
+				const start = Date.now();
+				return setTimeout( () => {
+					cb( {
+						didTimeout: false,
+						timeRemaining: function timeRemaining() {
+							return Math.max( 0, 50 - ( Date.now() - start ) );
+						}
+					} );
+				}, 1 );
+			};
+		}
+
+		if ( ! 'cancelIdleCallback' in window ) {
+			window.cancelIdleCallback = ( id ) => clearTimeout( id );
+		}
+	}
+
+	/**
+	 * Detects if data saver mode is on.
+	 *
+	 * @link https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/save-data/#detecting_the_save-data_setting
+	 *
+	 * @returns {boolean|boolean}
+	 */
+	isDataSaverModeOn() {
+		return (
+			'connection' in navigator
+			&&
+			true === navigator.connection.saveData
+		);
+	}
+
+	/**
+	 * Checks if the browser supports link prefetch.
+	 *
+	 * @returns {boolean|boolean}
+	 */
+	supportsLinkPrefetch() {
+		const elem = document.createElement( 'link' );
+		return (
+			elem.relList
+			&&
+			elem.relList.supports
+			&&
+			elem.relList.supports( 'prefetch' )
+			&&
+			window.IntersectionObserver
+			&&
+			'isIntersecting' in IntersectionObserverEntry.prototype
+		);
+	}
+
+	isSlowConnection() {
+		return (
+			'connection' in navigator
+			&&
+			'effectiveType' in navigator.connection
+			&&
+			(
+				'2g' === navigator.connection.effectiveType
+				||
+				'slow-2g' === navigator.connection.effectiveType
+			)
+		)
+	}
+}
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin\/|\/logout\/|-login.php","usesTrailingSlash":"1","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"http:\/\/localhost:8080","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-after'>
+class RocketPreloadLinks {
+
+	constructor( browser, config ) {
+		this.browser = browser;
+		this.config  = config;
+		this.options = this.browser.options;
+
+		this.prefetched = new Set;
+		this.eventTime  = null;
+		this.threshold  = 1111;
+		this.numOnHover = 0;
+	}
+
+	/**
+	 * Initializes the handler.
+	 */
+	init() {
+		if (
+			! this.browser.supportsLinkPrefetch()
+			||
+			this.browser.isDataSaverModeOn()
+			||
+			this.browser.isSlowConnection()
+		) {
+			return;
+		}
+
+		this.regex = {
+			excludeUris: RegExp( this.config.excludeUris, 'i' ),
+			images: RegExp( '.(' + this.config.imageExt + ')$', 'i' ),
+			fileExt: RegExp( '.(' + this.config.fileExt + ')$', 'i' )
+		};
+
+		this._initListeners( this );
+	}
+
+	/**
+	 * Initializes the event listeners.
+	 *
+	 * @private
+	 *
+	 * @param self instance of this object, used for binding "this" to the listeners.
+	 */
+	_initListeners( self ) {
+		// Setting onHoverDelay to -1 disables the "on-hover" feature.
+		if ( this.config.onHoverDelay > -1 ) {
+			document.addEventListener( 'mouseover', self.listener.bind( self ), self.listenerOptions );
+		}
+
+		document.addEventListener( 'mousedown', self.listener.bind( self ), self.listenerOptions );
+		document.addEventListener( 'touchstart', self.listener.bind( self ), self.listenerOptions );
+	}
+
+	/**
+	 * Event listener. Processes when near or on a valid <a> hyperlink.
+	 *
+	 * @param Event event Event instance.
+	 */
+	listener( event ) {
+		const linkElem = event.target.closest( 'a' );
+		const url      = this._prepareUrl( linkElem );
+		if ( null === url ) {
+			return;
+		}
+
+		switch ( event.type ) {
+			case 'mousedown':
+			case 'touchstart':
+				this._addPrefetchLink( url );
+				break;
+			case 'mouseover':
+				this._earlyPrefetch( linkElem, url, 'mouseout' );
+		}
+	}
+
+	/**
+	 *
+	 * @private
+	 *
+	 * @param Element|null linkElem
+	 * @param object url
+	 * @param string resetEvent
+	 */
+	_earlyPrefetch( linkElem, url, resetEvent ) {
+		const doPrefetch = () => {
+			falseTrigger = null;
+
+			// Start the rate throttle: 1 sec timeout.
+			if ( 0 === this.numOnHover ) {
+				setTimeout( () => this.numOnHover = 0, 1000 );
+			}
+			// Bail out when exceeding the rate throttle.
+			else if ( this.numOnHover > this.config.rateThrottle ) {
+				return;
+			}
+
+			this.numOnHover++;
+			this._addPrefetchLink( url );
+		};
+
+		// Delay to avoid false triggers for hover/touch/tap.
+		let falseTrigger = setTimeout( doPrefetch, this.config.onHoverDelay );
+
+		// On reset event, reset the false trigger timer.
+		const reset = () => {
+			linkElem.removeEventListener( resetEvent, reset, { passive: true } );
+			if ( null === falseTrigger ) {
+				return;
+			}
+
+			clearTimeout( falseTrigger );
+			falseTrigger = null;
+		};
+		linkElem.addEventListener( resetEvent, reset, { passive: true } );
+	}
+
+	/**
+	 * Adds a <link rel="prefetch" href="<url>"> for the given URL.
+	 *
+	 * @param string url The Given URL to prefetch.
+	 */
+	_addPrefetchLink( url ) {
+		this.prefetched.add( url.href );
+
+		return new Promise( ( resolve, reject ) => {
+			const elem   = document.createElement( 'link' );
+			elem.rel     = 'prefetch';
+			elem.href    = url.href;
+			elem.onload  = resolve;
+			elem.onerror = reject;
+
+			document.head.appendChild( elem );
+		} ).catch(() => {
+			// ignore and continue.
+		});
+	}
+
+	/**
+	 * Prepares the target link's URL.
+	 *
+	 * @private
+	 *
+	 * @param Element|null linkElem Instance of the link element.
+	 * @returns {null|*}
+	 */
+	_prepareUrl( linkElem ) {
+		if (
+			null === linkElem
+			||
+			typeof linkElem !== 'object'
+			||
+			! 'href' in linkElem
+			||
+			// Link prefetching only works on http/https protocol.
+			[ 'http:', 'https:' ].indexOf( linkElem.protocol ) === -1
+		) {
+			return null;
+		}
+
+		const origin   = linkElem.href.substring( 0, this.config.siteUrl.length );
+		const pathname = this._getPathname( linkElem.href, origin );
+		const url      = {
+			original: linkElem.href,
+			protocol: linkElem.protocol,
+			origin: origin,
+			pathname: pathname,
+			href: origin + pathname
+		};
+
+		return this._isLinkOk( url ) ? url : null;
+	}
+
+	/**
+	 * Gets the URL's pathname. Note: ensures the pathname matches the permalink structure.
+	 *
+	 * @private
+	 *
+	 * @param object url Instance of the URL.
+	 * @param string origin The target link href's origin.
+	 * @returns {string}
+	 */
+	_getPathname( url, origin ) {
+		let pathname = origin
+			? url.substring( this.config.siteUrl.length )
+			: url;
+
+		if ( ! pathname.startsWith( '/' ) ) {
+			pathname = '/' + pathname;
+		}
+
+		if ( this._shouldAddTrailingSlash( pathname ) ) {
+			return pathname + '/';
+		}
+
+		return pathname;
+	}
+
+	_shouldAddTrailingSlash( pathname ) {
+		return (
+			this.config.usesTrailingSlash
+			&&
+			! pathname.endsWith( '/' )
+			&&
+			! this.regex.fileExt.test( pathname )
+		);
+	}
+
+	/**
+	 * Checks if the given link element is okay to process.
+	 *
+	 * @private
+	 *
+	 * @param object url URL parts object.
+	 *
+	 * @returns {boolean}
+	 */
+	_isLinkOk( url ) {
+		if ( null === url || typeof url !== 'object' ) {
+			return false;
+		}
+
+		return (
+			! this.prefetched.has( url.href )
+			&&
+			url.origin === this.config.siteUrl // is an internal document.
+			&&
+			url.href.indexOf( '?' ) === -1 // not a query string.
+			&&
+			url.href.indexOf( '#' ) === -1 // not an anchor.
+			&&
+			! this.regex.excludeUris.test( url.href ) // not excluded.
+			&&
+			! this.regex.images.test( url.href ) // not an image.
+		);
+	}
+
+	/**
+	 * Named static constructor to encapsulate how to create the object.
+	 */
+	static run() {
+		// Bail out if the configuration not passed from the server.
+		if ( typeof RocketPreloadLinksConfig === 'undefined' ) {
+			return;
+		}
+
+		const browser  = new RocketBrowserCompatibilityChecker( {
+			capture: true,
+			passive: true
+		} );
+		const instance = new RocketPreloadLinks( browser, RocketPreloadLinksConfig );
+		instance.init();
+	}
+}
+
+RocketPreloadLinks.run();
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/popper.min.js?ver=5.8' id='wp-vollcom-digital-popper-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/bootstrap.min.js?ver=5.8' id='wp-vollcom-digital-bootstrapjs-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/mdb.min.js?ver=5.8' id='wp-vollcom-digital-mdbootstrapjs-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/custom.min.js?ver=jquery' id='wp-vollcom-digital-customjs-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/theme-script.min.js?ver=5.8' id='wp-vollcom-digital-themejs-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/themes/vollcom-digital/inc/assets/js/skip-link-focus-fix.min.js?ver=20151215' id='wp-vollcom-digital-skip-link-focus-fix-js' defer></script>
+<script type='text/javascript' id='wpcf7cf-scripts-js-extra'>
+/* <![CDATA[ */
+var wpcf7cf_global_settings = {"ajaxurl":"\/wp\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/cf7-conditional-fields/js/scripts.js?ver=1.9.16' id='wpcf7cf-scripts-js' defer></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.google.com/recaptcha/api.js?render=6LdYeSQaAAAAAPbVHmWgk3SalGAdgJJxeVJWGj0J&#038;ver=3.0' id='google-recaptcha-js'></script>
+<script type='text/javascript' src='/wp/wp-includes/js/dist/vendor/regenerator-runtime.js?ver=0.13.7' id='regenerator-runtime-js' defer></script>
+<script type='text/javascript' src='/wp/wp-includes/js/dist/vendor/wp-polyfill.js?ver=3.15.0' id='wp-polyfill-js'></script>
+<script type='text/javascript' id='wpcf7-recaptcha-js-extra'>
+/* <![CDATA[ */
+var wpcf7_recaptcha = {"sitekey":"6LdYeSQaAAAAAPbVHmWgk3SalGAdgJJxeVJWGj0J","actions":{"homepage":"homepage","contactform":"contactform"}};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/contact-form-7/modules/recaptcha/index.js?ver=5.4.2' id='wpcf7-recaptcha-js' defer></script>
+<script type='text/javascript' src='/wp/wp-includes/js/wp-embed.js?ver=5.8' id='wp-embed-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/runtime.js?ver=0.5.4' id='sli-runtime-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/vendors.js?ver=0.5.4' id='sli-vendors-js' defer></script>
+<script type='text/javascript' src='/wp/wp-includes/js/dist/vendor/react.js?ver=16.13.1' id='react-js' defer></script>
+<script type='text/javascript' src='/wp/wp-includes/js/dist/vendor/react-dom.js?ver=16.13.1' id='react-dom-js' defer></script>
+<script type='text/javascript' id='sli-common-js-extra'>
+/* <![CDATA[ */
+var SliCommonL10n = {"restApi":{"baseUrl":"http:\/\/localhost:8080\/wp-json\/sl-insta","authToken":"05aa01e34df4be049676b2927d95748dfe673702"},"imagesUrl":"http:\/\/localhost:8080\/app\/plugins\/spotlight-social-photo-feeds\/ui\/images"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/common.js?ver=0.5.4' id='sli-common-js' defer></script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/spotlight-social-photo-feeds/ui/dist/front-app.js?ver=0.5.4' id='sli-front-js' defer></script>
+<script type='text/javascript' id='statify-js-js-extra'>
+/* <![CDATA[ */
+var statify_ajax = {"url":"\/wp\/wp-admin\/admin-ajax.php","nonce":"98e9954344"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='http://localhost:8080/app/plugins/statify/js/snippet.min.js?ver=1.8.3' id='statify-js-js' defer></script>
+<script>window.lazyLoadOptions = {
+                elements_selector: "img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",
+                data_src: "lazy-src",
+                data_srcset: "lazy-srcset",
+                data_sizes: "lazy-sizes",
+                class_loading: "lazyloading",
+                class_loaded: "lazyloaded",
+                threshold: 300,
+                callback_loaded: function(element) {
+                    if ( element.tagName === "IFRAME" && element.dataset.rocketLazyload == "fitvidscompatible" ) {
+                        if (element.classList.contains("lazyloaded") ) {
+                            if (typeof window.jQuery != "undefined") {
+                                if (jQuery.fn.fitVids) {
+                                    jQuery(element).parent().fitVids();
+                                }
+                            }
+                        }
+                    }
+                }};
+        window.addEventListener('LazyLoad::Initialized', function (e) {
+            var lazyLoadInstance = e.detail.instance;
+
+            if (window.MutationObserver) {
+                var observer = new MutationObserver(function(mutations) {
+                    var image_count = 0;
+                    var iframe_count = 0;
+                    var rocketlazy_count = 0;
+
+                    mutations.forEach(function(mutation) {
+                        for (i = 0; i < mutation.addedNodes.length; i++) {
+                            if (typeof mutation.addedNodes[i].getElementsByTagName !== 'function') {
+                                continue;
+                            }
+
+                           if (typeof mutation.addedNodes[i].getElementsByClassName !== 'function') {
+                                continue;
+                            }
+
+                            images = mutation.addedNodes[i].getElementsByTagName('img');
+                            is_image = mutation.addedNodes[i].tagName == "IMG";
+                            iframes = mutation.addedNodes[i].getElementsByTagName('iframe');
+                            is_iframe = mutation.addedNodes[i].tagName == "IFRAME";
+                            rocket_lazy = mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');
+
+                            image_count += images.length;
+			                iframe_count += iframes.length;
+			                rocketlazy_count += rocket_lazy.length;
+
+                            if(is_image){
+                                image_count += 1;
+                            }
+
+                            if(is_iframe){
+                                iframe_count += 1;
+                            }
+                        }
+                    } );
+
+                    if(image_count > 0 || iframe_count > 0 || rocketlazy_count > 0){
+                        lazyLoadInstance.update();
+                    }
+                } );
+
+                var b      = document.getElementsByTagName("body")[0];
+                var config = { childList: true, subtree: true };
+
+                observer.observe(b, config);
+            }
+        }, false);</script><script data-no-minify="1" async src="http://localhost:8080/app/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.js"></script><script>function lazyLoadThumb(e){var t='<img loading="lazy" data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<div class="play"></div>';return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.dataset.query.length?'':'&'+this.dataset.query;e.setAttribute("src",t.replace("ID",this.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow", "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.replaceChild(e,this)}document.addEventListener("DOMContentLoaded",function(){var e,t,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)e=document.createElement("div"),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query", a[t].dataset.query),e.setAttribute("data-src", a[t].dataset.src),e.innerHTML=lazyLoadThumb(a[t].dataset.id),e.onclick=lazyLoadYoutubeIframe,a[t].appendChild(e)});</script></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me - Debug: cached@1650523695 -->

@@ -1,0 +1,85 @@
+/* Sizing */
+.h-400 {
+  height: 400px;
+}
+
+.h-180 {
+  height: 180px;
+}
+.remove_working_infobox {
+  background-color: #f8f8f8;
+  padding: 20px 20px 13px;
+  border-radius: 4px;
+  margin-bottom: 48px;
+}
+
+.job_descriptions_entries ul, .job_descriptions_entries li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.job_descriptions_entries ul {
+  margin: 2em 0;
+}
+.job_descriptions_entries li {
+  margin: 1em;
+  margin-left: 3em;
+}
+
+.job_descriptions_entries li:before {
+  content: "\f00c";
+  font-family: "Font Awesome 5 Pro";
+  float: left;
+  margin-left: -3em;
+  color: #181347;
+  background-color: #e5eaf4;
+  width: 32px;
+  height: 32px;
+  padding: 2px 8px;
+  border-radius: 16px;
+  font-weight: 400;
+}
+.application-file .cf7md-label{
+  font-size: 1rem !important;
+  color: black !important;
+  font-weight: 500 !important;
+}
+span.your-email {
+  background-color: white;
+}
+
+.font-awesome-pro button {
+  font-family: "Font Awesome 5 Pro" !important;
+  padding: 1rem !important;
+  height: 100% !important;
+  margin: 0px !important;
+}
+.yellow-badge {
+  background-color: #f5c24e;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  vertical-align: text-bottom;
+}
+.job-info-box h5 {
+  font-weight: 500;
+}
+.vd-gray {
+  color: #e3e3e3;
+}
+
+.bg-services{
+  background-color: #f7f7fb;
+}
+
+.bg-services:hover {
+  background-color: #4b17e3;
+  color: white;
+}
+.bg-services:hover .card-title, .bg-services:hover .service-link, .bg-services:hover .card-text {
+  color: white;
+}
+
+.service-link {
+  color: #90a3ae;
+}

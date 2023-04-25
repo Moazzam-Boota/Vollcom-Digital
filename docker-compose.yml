@@ -1,0 +1,62 @@
+version: '3'
+services:
+
+  vd-mariadb:
+    image: mariadb:latest
+    container_name: vd-mariadb
+    command: --default-authentication-plugin=mysql_native_password --innodb-buffer-pool-size=1G --sort_buffer_size=1073741824
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+    restart: on-failure
+    ports:
+      - "3307:3306"
+    volumes:
+      - './data/db:/var/lib/mysql:delegated'
+    networks:
+      - internal
+
+  vd-wordpress:
+    build:
+      context: ./
+      args:
+        - WITH_XDEBUG=true
+        - APCU_VERSION=5.1.19
+    container_name: vd-wordpress
+    working_dir: "/var/www/html/web"
+    environment:
+      DB_HOST: vd-mariadb
+      DB_PORT: 3306
+      DB_NAME: wordpress
+      DB_USER: wordpress
+      DB_PASSWORD: wordpress
+      WP_ENV: development
+      PHP_EXTENSION_XDEBUG: 1
+      PHP_IDE_CONFIG: "serverName=vollcomdigital"
+    depends_on:
+      - vd-mariadb
+    restart: on-failure
+    ports:
+      - "8080:8080"
+    volumes:
+      - './src:/var/www/html:rw,cached'
+      - './config/php/docker-xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini'
+    networks:
+      - internal
+      - external
+
+  vd-composer:
+    image: composer
+    container_name: vd-composer
+    working_dir: /var/www/html
+    restart: 'no'
+    volumes:
+      - './src:/var/www/html:rw,cached'
+
+networks:
+  external:
+    driver: bridge
+  internal:
+    driver: bridge
