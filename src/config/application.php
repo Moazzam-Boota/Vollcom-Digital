@@ -18,7 +18,6 @@ use function Env\env;
  */
 
  
- 
 $root_dir = dirname(__DIR__);
 
 /**
